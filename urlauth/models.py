@@ -3,9 +3,9 @@ from binascii import hexlify
 import time
 from datetime import datetime, timedelta
 
+import simplejson
 from django.db import models
 from django.conf import settings
-from django.utils import simplejson
 from django.contrib.auth.models import User
 from django.db.utils import IntegrityError
 
