@@ -2,7 +2,10 @@ import os
 from datetime import datetime
 import time
 from base64 import b64encode, b64decode
-from urllib import urlencode
+try:
+    from urllib.parse import urlencode
+except ImportError:
+    from urllib import urlencode
 from cgi import parse_qs
 import logging
 
@@ -19,7 +22,7 @@ def wrap_url(url, **kwargs):
     """
     Create new authorization key and append it to the url.
     """
-    
+
     logging.error('urlauth.util.wrap_url is deprecated. Use AuthKey.objects.wrap_url instead.')
     return AuthKey.objects.wrap_url(url, **kwargs)
 
