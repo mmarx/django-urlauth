@@ -63,6 +63,9 @@ class AuthKeyManager(models.Manager):
 
 
 class AuthKey(models.Model):
+    class Meta:
+        app_label = 'account'
+
     id = models.CharField(max_length=40, primary_key=True)
     uid = models.PositiveIntegerField(null=True)
     expired = models.DateTimeField()
